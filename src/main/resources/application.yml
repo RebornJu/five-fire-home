@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/five_fire_home?autoReconnect=true&useSSL=false
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      #create 每次启动都会创建表；
+      #update 没有表的第一次会创建，以后都会更新
+      # create-drop应用停下来会删掉表
+      #none 什么都不操作
+      #validate 会验证表的数据字段和类的是否一致，不一致报错
+      ddl-auto: update
+    show-sql: true
